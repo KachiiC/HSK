@@ -2,8 +2,8 @@ from rest_framework import serializers
 from .models import *
 
 
-class HSK1Serializer(serializers.ModelSerializer):
+class HSKSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = HSK1
+        model = Word
         fields = ('pk', 'word', 'pingyin', 'definition', 'type')

@@ -1,18 +1,18 @@
  const HSK1Columns = [
     {
-      title: 'word',
+      title: 'Word',
       dataIndex: 'word',
     },
     {
-      title: 'pingyin',
+      title: 'Pingyin',
       dataIndex: 'pingyin',
     },
     {
-        title: 'pingyin',
-        dataIndex: 'pingyin',
+        title: 'Definition',
+        dataIndex: 'definition',
     },
     {
-      title: 'type',
+      title: 'Type',
       dataIndex: 'type',
       filters: [
         {

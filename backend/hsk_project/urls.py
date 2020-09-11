@@ -19,6 +19,6 @@ from hsk_framework import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hsk_list/', views.hsk1_list),
-    path('hsk_detail/', views.hsk1_detail)
+    path('word_list/', views.word_list),
+    path('word_detail/', views.word_detail)
 ]
