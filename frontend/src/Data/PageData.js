@@ -4,8 +4,6 @@ import About from 'Pages/About'
 import Revision from 'Pages/Revision'
 import Levels from 'Pages/Levels'
 
-const inputLevel = 1
-
 const PageData = [
     {
         name: "about",

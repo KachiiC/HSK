@@ -5,21 +5,8 @@ import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import {Link} from 'react-router-dom'
 //Data 
-import RevisionDropdown from './DropdownData'
 
-function SiteNavbar (){
-  
-  const dropdownItems = RevisionDropdown.map((item) => {
-    const itemLink = "/hsk" + item
-
-    return (
-      <NavDropdown.Item>
-        <Link to="/levels">
-          HSK - Level {item}
-        </Link>
-     </NavDropdown.Item>
-    )
-  })
+const SiteNavbar = () => {
 
   return (
     <Navbar bg="light" expand="lg">
@@ -33,11 +20,8 @@ function SiteNavbar (){
           <Nav.Link>
             <Link to="/about">About</Link>
           </Nav.Link>
-          <NavDropdown title="Revision">
-            {dropdownItems}
-          </NavDropdown>
           <NavDropdown title="Levels">
-            {dropdownItems}
+            <Link to="/hsk-levels">About</Link>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>

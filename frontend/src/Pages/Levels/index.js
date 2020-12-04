@@ -1,18 +1,23 @@
 import React from 'react'
 // Components
-import { Table } from 'antd'
-import HSKColumns from './HSKColumns'
 import HSKWordsData from 'Data/HSKWordsData'
+import SiteTable from 'Components/SiteTable'
 
 
-const HSK = (props) => {
+const HSK = () => {
 
-    const level = props.level
+    const hskColumns = [
+        "chinese_characters",
+        "pinyin",
+        "definition",
+        "type",
+        "hsk_level"
+    ]
 
     return (
         <>
-            <h1 className="page-title">HSK1</h1>
-            <Table columns={HSKColumns} dataSource={HSKWordsData} className="hsk-tables"/>
+            <h1 className="page-title">HSK</h1>
+            <SiteTable columns={hskColumns} data={HSKWordsData} />
         </>
     )
 }
