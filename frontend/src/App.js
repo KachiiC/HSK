@@ -4,33 +4,30 @@ import './App.css';
 import 'antd/dist/antd.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 // Page
-import Home from './Pages/Home/home'
-import About from './Pages/About/about'
-import Revision from './Pages/Revision/revision'
-import HSK1 from './Pages/Levels/HSK1/'
+import PageData from './Data/PageData'
 // Components
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from './Components/Navbar/SiteNavbar';
 import Footer from './Components/Footer/SiteFooter';
 
-function App() {
+const App = () => {
+
+  const listOfPages = PageData.map((page) => {
+
+    return (
+      <Route path={`/${page.name}`}>
+        {page.page}
+      </Route>
+    )
+  })
+
+  
 
   return (
     <Router>
       <Navbar />
         <Switch>
-            <Route path="/hsk1">
-              <HSK1 />
-            </Route>  
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/revision">
-              <Revision />
-            </Route>          
-            <Route path="/">
-              <Home />
-            </Route>
+          {listOfPages}
         </Switch>
       <Footer />
     </Router>
