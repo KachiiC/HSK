@@ -1,0 +1,22 @@
+.component-container{
+    width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.single-tab {
+    width: 200px;
+    border-bottom: 1px solid black;
+    margin: 20px auto;
+}
+
+.single-tab:hover {
+    cursor: pointer;
+    border-bottom: 2px solid rgb(30, 111, 250);
+}
+
+.tabs-row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}

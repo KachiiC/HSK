@@ -14,7 +14,7 @@ const PageData = [
         page: <Revision />
     },
     {
-        name: `hsk-level`,
+        name: "hsk-words",
         page:  <Levels />
     }
 ]

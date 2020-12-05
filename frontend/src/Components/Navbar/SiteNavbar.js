@@ -2,7 +2,6 @@ import React from 'react'
 // Components
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
 import {Link} from 'react-router-dom'
 //Data 
 
@@ -20,9 +19,9 @@ const SiteNavbar = () => {
           <Nav.Link>
             <Link to="/about">About</Link>
           </Nav.Link>
-          <NavDropdown title="Levels">
-            <Link to="/hsk-levels">About</Link>
-          </NavDropdown>
+          <Nav.Link>
+            <Link to="/hsk-words">Levels</Link>
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
