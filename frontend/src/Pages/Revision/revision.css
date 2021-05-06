@@ -15,10 +15,11 @@
     margin: 10px;
     width: 150px;
     color: white;
+    font-weight: 700;
 }
 
 .answer-container {
     text-align: center;
-    width: 800px;
-    margin: 0px auto;
+    width: 80%;
+    margin: 25px auto;
 }

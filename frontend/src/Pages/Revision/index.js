@@ -1,14 +1,15 @@
 import React, {useState} from 'react'
 // DATA
 import HSKWordsData from 'Data/HSKWords/HSKWordsData'
+import ButtonsList from 'Data/Revision/ButtonsList'
 // CSS
 import './revision.css'
 // Components
-import RevisionButton from './RevisionComponents/RevisionButton'
+import RevisionButtons from './RevisionComponents/RevisionButtons'
 import WordResult from './RevisionComponents/WordResult'
 import TestWord from './RevisionComponents/TestWord'
 
-const Revise = () => {
+const Revision = () => {
 
     // Current Word
     const [wordIndex, setWordIndex] = useState(0)
@@ -33,45 +34,27 @@ const Revise = () => {
         setShowResults(false)
     }
 
-    const ButtonsList = [
-        {
-            title: "Previous Word",        
-            click: previousWord,
-            background_color: "#0099ff"
-        },
-        {
-            title:`${showResults ? "Hide" : "Show"} Answer`,
-            click: showMe,
-            background_color: "#33cc33"
-        },
-        {
-            title: "Next Word",
-            click: nextWord,
-            background_color:"#0099ff"
+    const button_functions = [previousWord, showMe, nextWord]
+
+    const newButtonsList = ButtonsList.map((button) => {
+
+        if (button.background_color === "#33cc33") {
+            button.title = `${showResults ? "Hide" : "Show"} Answer`
         }
-    ]
 
-    const displayButtonsList = ButtonsList.map((button, index) => (
-            <RevisionButton 
-                title={button.title}          
-                click={button.click} 
-                background_color={button.background_color}
-                key={index}
-            />
-        )
-    )
+        button.click = button_functions[ButtonsList.indexOf(button)]
 
-    const Results = (
-        <div className="answer-container">
-            <WordResult 
-                definition={HSKWordsData[wordIndex].definition}
-                pinyin={HSKWordsData[wordIndex].pinyin}
-                type={HSKWordsData[wordIndex].type}
-            />
-        </div>
-    )
+        return button
+    })
 
-    const resultsLogic = showResults ? Results : null
+    const resultsLogic = showResults ? 
+        <WordResult 
+            definition={HSKWordsData[wordIndex].definition}
+            pinyin={HSKWordsData[wordIndex].pinyin}
+            type={HSKWordsData[wordIndex].type}
+        />
+    : 
+        null
     
     return (
         <div className="card-container">
@@ -80,10 +63,10 @@ const Revise = () => {
                 total_words={HSKWordsData.length}
                 displayed_word={HSKWordsData[wordIndex].chinese_characters}
             />
-            {displayButtonsList}
+            <RevisionButtons data={newButtonsList} />
             {resultsLogic}
         </div>
     )
 }
 
-export default Revise
+export default Revision
