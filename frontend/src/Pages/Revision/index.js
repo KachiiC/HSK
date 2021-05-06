@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-import HSKWordsData from 'Data/HSKWordsData'
+// DATA
+import HSKWordsData from 'Data/HSKWords/HSKWordsData'
 import './revision.css'
 
 const Revise = () => {

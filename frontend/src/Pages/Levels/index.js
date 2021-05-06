@@ -1,28 +1,19 @@
 import React, {useState} from 'react'
 // Components
-import SiteTable from 'Components/SiteTable'
 // Data 
-import HSKWordsData from 'Data/HSKWordsData'
-import TabData from 'Data/TabData'
+import HSKWordsData from 'Data/HSKWords/HSKWordsData'
+import TabData from 'Data/HSKWords/HSKTabData'
 // CSS
 import './levels.css'
+import HSKTableColumn from 'Data/HSKTable/HSKTableColumns'
+import AntdTable from 'Components/ComponentLibrary/AntdTable'
 
 
 const HSK = () => {
 
     const [selectedLevel, setSelectedLevel] = useState(1)
 
-    const hskColumns = [
-        "chinese_characters",
-        "pinyin",
-        "definition",
-        "type",
-        "hsk_level"
-    ]
-
-    const displayedData = HSKWordsData.filter((level) => {
-        return level.hsk_level === selectedLevel
-    })
+    const displayedLevel = HSKWordsData.filter((level) => level.hsk_level === selectedLevel )
 
     const displayTabs = TabData.map((tab, index) => (
         <div key={index}
@@ -32,6 +23,13 @@ const HSK = () => {
         </div>
     ))
 
+    const ammendedColumn = HSKTableColumn.map((column) => {
+        
+        column.align = "center"
+        column.width = "25%"
+
+        return column
+    })
 
     return (
         <div className="component-container">
@@ -39,8 +37,13 @@ const HSK = () => {
             <div className="tabs-row">
                 {displayTabs}
             </div>
-            <h3>HSK Level {selectedLevel}</h3>
-            <SiteTable columns={hskColumns} data={displayedData} />
+            {/* HSK TABLE  */}
+            <AntdTable
+                title={`HSK Level ${selectedLevel}`}
+                columns={ammendedColumn} 
+                data={displayedLevel}
+                pagination={false}
+            />
         </div>
     )
 }

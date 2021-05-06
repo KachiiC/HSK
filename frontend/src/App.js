@@ -4,11 +4,11 @@ import './App.css';
 import 'antd/dist/antd.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 // Page
-import PageData from './Data/PageData'
+import PageData from 'Data/PageData'
 // Components
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navbar from './Components/Navbar/SiteNavbar';
-import Footer from './Components/Footer/SiteFooter';
+import { BrowserRouter , Switch, Route } from "react-router-dom";
+import Navbar from 'Components/SiteComponents/SiteNavbar/SiteNavbar';
+import Footer from 'Components/SiteComponents/SiteFooter/SiteFooter';
 
 const App = () => {
 
@@ -24,13 +24,13 @@ const App = () => {
   
 
   return (
-    <Router>
+    <BrowserRouter>
       <Navbar />
         <Switch>
           {listOfPages}
         </Switch>
       <Footer />
-    </Router>
+    </BrowserRouter>
   );
 
 }
