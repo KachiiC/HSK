@@ -23,6 +23,7 @@ const AntdTable = (props) => {
                 columns={props.columns} 
                 dataSource={props.data} 
                 pagination={props.pagination}
+                bordered
             />
             {table_info()}
         </div>

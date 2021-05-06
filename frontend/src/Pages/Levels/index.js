@@ -5,7 +5,7 @@ import HSKWordsData from 'Data/HSKWords/HSKWordsData'
 import TabData from 'Data/HSKWords/HSKTabData'
 // CSS
 import './levels.css'
-import HSKTableColumn from 'Data/HSKTable/HSKTableColumns'
+import HSKTableColumns from 'Data/HSKTable/HSKTableColumns'
 import AntdTable from 'Components/ComponentLibrary/AntdTable'
 
 
@@ -17,30 +17,24 @@ const HSK = () => {
 
     const displayTabs = TabData.map((tab, index) => (
         <div key={index}
-            className="single-tab" 
+            className="site-span-1 single-tab"
             onClick={() => setSelectedLevel(tab)}>
             <h4>HSK Level {tab}</h4>
         </div>
     ))
 
-    const ammendedColumn = HSKTableColumn.map((column) => {
-        
-        column.align = "center"
-        column.width = "25%"
-
-        return column
-    })
 
     return (
         <div className="component-container">
-            <h1>HSK Levels</h1>
-            <div className="tabs-row">
+            <div className="site-grid"
+                style={{"gridTemplateColumns": `repeat(${TabData.length},1fr)`}}
+            >
                 {displayTabs}
             </div>
             {/* HSK TABLE  */}
             <AntdTable
                 title={`HSK Level ${selectedLevel}`}
-                columns={ammendedColumn} 
+                columns={HSKTableColumns} 
                 data={displayedLevel}
                 pagination={false}
             />

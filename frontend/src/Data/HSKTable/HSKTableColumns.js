@@ -1,22 +1,16 @@
-const HSKTableColumn = [
-    // Chinese Characters	Pinyin	Definition	Type	Hsk Level
+const HSKTableColumnData = [
     {
-        title: 'Chinese Characters',
         dataIndex: 'chinese_characters',
         sorter: (a, b) => a.chinese_characters.length - b.chinese_characters.length,
-        sortDirections: ['descend', 'ascend'],
     },
     {
-        title: 'Pinyin',
         dataIndex: 'pinyin',
         sorter: (a, b) => a.pinyin.localeCompare(b.pinyin),
     },
     {
-        title: 'Definition',
         dataIndex: 'definition',
     },
     {
-        title: 'Type',
         dataIndex: 'type',
         width: "25%",
         filters: [
@@ -67,7 +61,14 @@ const HSKTableColumn = [
     }
 ]
 
-export default HSKTableColumn
+const HSKTableColumns = HSKTableColumnData.map((column) => {
+    column.title = column.dataIndex.split("_").join(" ").toUpperCase()
+    column.align = "center"
+    column.width = "25%"
+    return column
+})
+
+export default HSKTableColumns
 // Adjective,
 // Adverb,
 // Auxiliary,

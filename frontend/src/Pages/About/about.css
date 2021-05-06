@@ -1,9 +1,4 @@
-.about-container {
-    padding: 40px 80px;
-    display: flex;
-    flex-direction: column;
-    min-height: 85vh;
-}
+
 
 .about-description {
     align-items: center;

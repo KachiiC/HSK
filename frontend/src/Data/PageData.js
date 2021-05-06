@@ -6,21 +6,17 @@ import Levels from 'Pages/Levels'
 
 const PageData = [
     {
-        name: "about",
-        page: <About />
+        title: "about",
+        page: About
     },
     {
-        name: "revision",
+        title: "revision",
         page: <Revision />
     },
     {
-        name: "hsk-words",
+        title: "levels",
         page:  <Levels />
     },
-    {
-        name: "revision",
-        page:  <Revision />
-    }
 ]
 
 export default PageData

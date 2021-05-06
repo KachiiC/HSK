@@ -1,6 +1,7 @@
 .card-container{
     margin: 50px auto;
     text-align: center;
+    min-height: 300px;
 }
 
 .word-container {
@@ -9,21 +10,11 @@
     text-align: center;
 }
 
-.result-button,
-.toggle-button {
+.revision-button {
     padding: 10px;
     margin: 10px;
     width: 150px;
-}
-
-.result-button {
     color: white;
-    background-color: rgba(64, 213, 64, 0.879);
-}
-
-.toggle-button {
-    color: white;
-    background-color: rgb(8, 125, 227);
 }
 
 .answer-container {
