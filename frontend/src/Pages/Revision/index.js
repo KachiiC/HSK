@@ -1,72 +1,48 @@
 import React, {useState} from 'react'
-// DATA
-import HSKWordsData from 'Data/HSKWords/HSKWordsData'
-import ButtonsList from 'Data/Revision/ButtonsList'
+
 // CSS
 import './revision.css'
 // Components
-import RevisionButtons from './RevisionComponents/RevisionButtons'
-import WordResult from './RevisionComponents/WordResult'
-import TestWord from './RevisionComponents/TestWord'
+import RevisionTest from './RevisionComponents/RevisionTest'
+import HSKWordsData from 'Data/HSKWords/HSKWordsData'
+// Data 
+import TabData from 'Data/HSKWords/HSKTabData'
+// CSS
+import LevelTabs from 'Pages/Levels/LevelComponents/LevelTabs'
 
-const Revision = () => {
+const Revision = (props) => {
 
-    // Current Word
-    const [wordIndex, setWordIndex] = useState(0)
-    const [showResults, setShowResults] = useState(false)
+    const [selectedLevel, setSelectedLevel] = useState(0)
 
-    // BUTTONS
-    const showMe = () => setShowResults(show => !show)
+    const filteredData = HSKWordsData.filter((level) => {
 
-    const nextWord = () => {
-        (wordIndex === HSKWordsData.length - 1) ? 
-            setWordIndex(0)
-            : 
-            setWordIndex(prevWord => prevWord + 1);
-        setShowResults(false)
-    }
+        const filteredItems = selectedLevel === 0 ? level
+        :
+        level.hsk_level === selectedLevel
 
-    const previousWord = () => {
-        (wordIndex === 0) ? 
-            setWordIndex(HSKWordsData.length - 1)
-            :
-            setWordIndex(prevWord => prevWord - 1);
-        setShowResults(false)
-    }
-
-    const button_functions = [previousWord, showMe, nextWord]
-
-    const newButtonsList = ButtonsList.map((button) => {
-
-        if (button.background_color === "#33cc33") {
-            button.title = `${showResults ? "Hide" : "Show"} Answer`
-        }
-
-        button.click = button_functions[ButtonsList.indexOf(button)]
-
-        return button
+        return filteredItems
     })
 
-    const resultsLogic = showResults ? 
-        <WordResult 
-            definition={HSKWordsData[wordIndex].definition}
-            pinyin={HSKWordsData[wordIndex].pinyin}
-            type={HSKWordsData[wordIndex].type}
-        />
-    : 
-        null
-    
-    return (
-        <div className="card-container">
-            <TestWord
-                word_index={wordIndex + 1}
-                total_words={HSKWordsData.length}
-                displayed_word={HSKWordsData[wordIndex].chinese_characters}
+    const displayTabs = TabData.map((tab, index) => (
+            <LevelTabs
+                key={index}
+                click={() => setSelectedLevel(tab)}
+                tab={tab}
             />
-            <RevisionButtons data={newButtonsList} />
-            {resultsLogic}
+        )
+    )
+
+    return (
+        <div>
+            <div className="site-grid"
+                style={{"gridTemplateColumns": `repeat(${TabData.length},1fr)`}}
+            >
+                {displayTabs}
+            </div>
+        <RevisionTest data={filteredData}/>
         </div>
     )
+    
 }
 
 export default Revision
