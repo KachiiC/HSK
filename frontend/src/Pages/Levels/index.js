@@ -37,7 +37,7 @@ const HSK = () => {
 
     return (
         <div className="component-container">
-            <div className="site-grid"
+            <div className="site-grid levels-container"
                 style={{"gridTemplateColumns": `repeat(${TabData.length},1fr)`}}
             >
                 {displayTabs}

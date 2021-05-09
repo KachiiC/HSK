@@ -34,12 +34,12 @@ const Revision = (props) => {
 
     return (
         <div>
-            <div className="site-grid"
+            <div className="site-grid levels-container"
                 style={{"gridTemplateColumns": `repeat(${TabData.length},1fr)`}}
-            >
+                >
                 {displayTabs}
             </div>
-        <RevisionTest data={filteredData}/>
+            <RevisionTest data={filteredData}/>
         </div>
     )
     
