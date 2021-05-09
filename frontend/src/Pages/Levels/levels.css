@@ -19,3 +19,7 @@
     flex-wrap: wrap;
     margin: auto;
 }
+
+@media screen and (max-width: 1080px) {
+    
+}

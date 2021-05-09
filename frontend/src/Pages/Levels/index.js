@@ -20,31 +20,26 @@ const HSK = () => {
         level.hsk_level === selectedLevel 
     )
 
-    const displayTabs = TabData.map((tab, index) => (
+    const displayTabs = TabData.map((tab, index) => 
         <LevelTabs
             key={index}
             click={() => setSelectedLevel(tab)}
             tab={tab}
         />
-    ))
+    )
 
-    const titleLogic = () => {
-        if (selectedLevel === 0) {
-            return "All Levels"
-        }
-        return `HSK Level ${selectedLevel}`
-    }
+    const titleLogic = selectedLevel === 0 ? "All Levels" : `HSK Level ${selectedLevel}`
 
     return (
         <div className="component-container">
-            <div className="site-grid levels-container"
+            <div className="levels-container site-grid"
                 style={{"gridTemplateColumns": `repeat(${TabData.length},1fr)`}}
             >
                 {displayTabs}
             </div>
             {/* HSK TABLE  */}
             <AntdTable
-                title={titleLogic()}
+                title={titleLogic}
                 columns={HSKTableColumns} 
                 data={displayedLevel}
                 pagination={false}
