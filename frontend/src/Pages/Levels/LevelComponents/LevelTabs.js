@@ -9,7 +9,7 @@ const LevelTabs = (props) => {
         <div className="site-span-1 single-tab"
             onClick={props.click}
         >
-            <div>{tabLogic()}</div>
+            <div>{tabLogic}</div>
         </div>
     )
 }
