@@ -4,8 +4,7 @@ from .views import hsk_words_list, \
     all_hsk_levels, \
     single_hsk_level, \
     revision_list, \
-    add_revision_word, \
-    delete_revision_word
+    add_revision_word
 
 urlpatterns = [
     # HSK
@@ -14,6 +13,5 @@ urlpatterns = [
     path("hsk_level/", all_hsk_levels, name="all_hsk_levels"),
     path("hsk_level/<int:level>", single_hsk_level, name="hsk_level"),
     path("revision_list/", revision_list, name="revision_list"),
-    path('add_revision_word/', add_revision_word, name="edit_revision_list"),
-    path('delete_revision_word/', delete_revision_word, name="edit_revision_list"),
+    path("add_revision_word/<str:chinese_characters>", add_revision_word, name="add_revision_word")
 ]
