@@ -2,23 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a466c5f3-34b2-49b8-ab92-eb6285c1c8af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hsk_server/data/hsk_data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hsk_server/management/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hsk_server/management/commands/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hsk_server/management/commands/repop_hsk_words.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hsk_server/management/repopper_hsk_words.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hsk_server/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hsk_server/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hsk_server/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hsk_server/migrations/0002_revisionword.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsk_backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsk_backend/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsk_backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsk_backend/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsk_server/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsk_server/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hsk_server/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsk_server/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsk_server/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsk_server/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsk_server/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsk_server/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsk_server/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hsk_server/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsk_server/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/README.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +24,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1sLfE1AGMYozQHbikRoSC5pnl0C" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">

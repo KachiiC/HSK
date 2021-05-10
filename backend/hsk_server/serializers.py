@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import HSKLevel, Word
+from .models import HSKLevel, Word, RevisionWord
 
 
 class WordSerializer(serializers.ModelSerializer):
@@ -14,3 +14,11 @@ class HSKLevelSerializer(serializers.ModelSerializer):
     class Meta:
         model = HSKLevel
         fields = ('level', 'words')
+
+
+class RevisionWordSerializer(serializers.ModelSerializer):
+    words = WordSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = RevisionWord
+        fields = ['words']
