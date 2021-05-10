@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Word, HSKLevel
 
-# Register your models here.
+admin.site.register(Word)  # HSK Word
+admin.site.register(HSKLevel)  # HSK Level
