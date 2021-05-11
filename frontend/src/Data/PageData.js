@@ -1,8 +1,9 @@
 import React from 'react'
 //Pages
 import About from 'Pages/About'
+import Quiz from 'Pages/Quiz'
+import Levels from 'Pages/Words'
 import Revision from 'Pages/Revision'
-import Levels from 'Pages/Levels'
 
 const PageData = [
     {
@@ -10,13 +11,17 @@ const PageData = [
         page: About
     },
     {
-        title: "revision",
-        page: <Revision />
+        title: "Quiz",
+        page: <Quiz />
     },
     {
-        title: "levels",
+        title: "Words",
         page:  <Levels />
     },
+    {
+        title: "Revision",
+        page: <Revision />
+    }
 ]
 
 export default PageData

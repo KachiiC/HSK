@@ -4,7 +4,7 @@ import TabData from 'Data/HSKWords/HSKTabData'
 import HSKTableColumns from 'Data/HSKTable/HSKTableColumns'
 import HSKWordsData from 'Data/HSKWords/HSKWordsData'
 // CSS
-import './levels.css'
+import './words.css'
 // COMPONENTS
 import AntdTable from 'Components/ComponentLibrary/AntdTable'
 import LevelTabs from './LevelComponents/LevelTabs'
@@ -13,7 +13,7 @@ import SiteFetcher from 'Components/SiteComponents/SiteFetcher'
 import SiteRender from 'Components/SiteComponents/SiteRender'
 
 
-const HSK = () => {
+const HSKWords = () => {
 
     const [selectedLevel, setSelectedLevel] = useState(0)
     const [selectedWord, setSelectedWord] = useState(HSKWordsData)
@@ -21,12 +21,6 @@ const HSK = () => {
     const responseData = SiteFetcher("http://127.0.0.1:8000/hsk_words/", [HSKWordsData])
 
     const wordsList = responseData.response
-
-    // useEffect(() => {fetch("http://127.0.0.1:8000/hsk_words/") 
-    //     .then(response => response.json())
-    //     .then(words => setWordsList(words))
-    // },[]) 
-
 
     const HSKWords = wordsList.map((word) => {
 
@@ -108,4 +102,4 @@ const HSK = () => {
     )
 }
 
-export default HSK
+export default HSKWords

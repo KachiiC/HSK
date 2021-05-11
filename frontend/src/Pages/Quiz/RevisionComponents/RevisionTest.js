@@ -11,7 +11,7 @@ const RevisionTest = (props) => {
     const WordsData = props.data
 
     // Current Word
-    const [wordIndex, setWordIndex] = useState(0)
+    const [wordIndex, setWordIndex] = useState(props.word_index)
     const [showResults, setShowResults] = useState(false)
 
     // BUTTONS
