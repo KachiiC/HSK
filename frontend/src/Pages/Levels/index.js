@@ -1,37 +1,37 @@
 import React, {useEffect, useState} from 'react'
-// Components
-// Data 
-import HSKWordsData from 'Data/HSKWords/HSKWordsData'
+// DATA
 import TabData from 'Data/HSKWords/HSKTabData'
 import HSKTableColumns from 'Data/HSKTable/HSKTableColumns'
+import HSKWordsData from 'Data/HSKWords/HSKWordsData'
 // CSS
 import './levels.css'
 // COMPONENTS
 import AntdTable from 'Components/ComponentLibrary/AntdTable'
 import LevelTabs from './LevelComponents/LevelTabs'
 import ReviseButton from './LevelComponents/ReviseButton'
+import SiteFetcher from 'Components/SiteComponents/SiteFetcher'
+import SiteRender from 'Components/SiteComponents/SiteRender'
 
 
 const HSK = () => {
 
-    const [wordsList, setWordsList] = useState([])
     const [selectedLevel, setSelectedLevel] = useState(0)
-    const [selectedWord, setSelectedWord] = useState({
-        chinese_characters: "",
-        pinyin: "",
-        definition: "",
-        type: "",
-        hsk_level: 0,
-    })
+    const [selectedWord, setSelectedWord] = useState(HSKWordsData)
 
-    useEffect(() => {fetch("http://127.0.0.1:8000/hsk_words/") 
-        .then(response => response.json())
-        .then(words => setWordsList(words))
-    },[]) 
+    const responseData = SiteFetcher("http://127.0.0.1:8000/hsk_words/", [HSKWordsData])
+
+    const wordsList = responseData.response
+
+    // useEffect(() => {fetch("http://127.0.0.1:8000/hsk_words/") 
+    //     .then(response => response.json())
+    //     .then(words => setWordsList(words))
+    // },[]) 
+
 
     const HSKWords = wordsList.map((word) => {
 
         const buttonLogic = () => word.revise === true ? "Remove" : "Add"
+        const typeLogic = () => word.revise === true ? "danger" : "primary"
         
         const reviseLogic = () => word.revise === false ?
             word.revise = true
@@ -40,13 +40,12 @@ const HSK = () => {
 
         const clickLogic = () => {setSelectedWord(word); reviseLogic(); buttonLogic()}
 
-        word.revision = <ReviseButton title={buttonLogic()} click={clickLogic}/>
+        word.revision = <ReviseButton title={buttonLogic()} click={clickLogic} type={typeLogic()}/>
 
         return word
     })
 
-    console.log(selectedWord)
-
+    // PUT LOGIC FOR REVISION
     useEffect(() => {
         const requestOptions = {
             method: 'PUT',
@@ -63,7 +62,7 @@ const HSK = () => {
         fetch(`http://127.0.0.1:8000/add_revision_word/${selectedWord.chinese_characters}`, requestOptions)
         .then(response => console.log(response))
         .catch(error => console.log(error))
-    }, [selectedWord]);
+    }, [selectedWord, HSKWords]);
 
     const displayedLevel = HSKWords.filter((level) => selectedLevel === 0 ? 
         level
@@ -84,6 +83,15 @@ const HSK = () => {
         : 
         `HSK Level ${selectedLevel}`
 
+    const renderLogic = (
+        <AntdTable
+            title={titleLogic}
+            columns={HSKTableColumns} 
+            data={displayedLevel}
+            pagination={false}
+        />
+    )
+
     return (
         <div className="component-container">
             <div className="levels-container site-grid"
@@ -92,11 +100,9 @@ const HSK = () => {
                 {displayTabs}
             </div>
             {/* HSK TABLE  */}
-            <AntdTable
-                title={titleLogic}
-                columns={HSKTableColumns} 
-                data={displayedLevel}
-                pagination={false}
+            <SiteRender
+                data={responseData}
+                component={renderLogic}
             />
         </div>
     )

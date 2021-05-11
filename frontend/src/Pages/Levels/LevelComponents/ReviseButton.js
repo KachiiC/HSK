@@ -1,9 +1,10 @@
 import React from 'react'
+import {Button} from 'antd'
 
 const ReviseButton = (props) => (
-    <button onClick={props.click}>
+    <Button onClick={props.click} type={props.type}>
         {props.title}
-    </button>
+    </Button>
 )
 
 export default ReviseButton
