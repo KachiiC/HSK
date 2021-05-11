@@ -1,8 +1,12 @@
 import React from 'react'
+// COMPONENTS
+import HomeCardsList from './HomeCardsList'
 
 const Home = (
-    <div className="site-container">
-        <h1 className="page-title">Home</h1>
+    <div className="home-container">
+        <div className="site-grid-system">
+            <HomeCardsList />
+        </div>
     </div>
 )
 
