@@ -12,7 +12,6 @@ const HSKTableColumnData = [
     },
     {
         dataIndex: 'type',
-        width: "25%",
         filters: [
             {
                 text: "Adjective",
@@ -58,13 +57,16 @@ const HSKTableColumnData = [
         filterMultiple: false,
         onFilter: (value, record) => record.type.indexOf(value) === 0,
         sorter: (a, b) => a.type.localeCompare(b.type),
+    },
+    {
+        dataIndex: 'revision',
     }
 ]
 
 const HSKTableColumns = HSKTableColumnData.map((column) => {
     column.title = column.dataIndex.split("_").join(" ").toUpperCase()
     column.align = "center"
-    column.width = "25%"
+    column.width = "20%"
     return column
 })
 

@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a466c5f3-34b2-49b8-ab92-eb6285c1c8af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hsk_server/migrations/0003_rename_words_revisionword_revision_word.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hsk_server/migrations/0004_delete_revisionword.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hsk_server/migrations/0005_word_revise.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsk_server/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsk_server/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hsk_server/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsk_server/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsk_server/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsk_server/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsk_server/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsk_server/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

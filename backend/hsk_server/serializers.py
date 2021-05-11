@@ -5,7 +5,14 @@ from .models import HSKLevel, Word
 class WordSerializer(serializers.ModelSerializer):
     class Meta:
         model = Word
-        fields = ('chinese_characters', 'pinyin', 'definition', 'type', 'hsk_level', 'revise')
+        fields = [
+            'chinese_characters',
+            'pinyin',
+            'definition',
+            'type',
+            'hsk_level',
+            'revise'
+        ]
 
 
 class HSKLevelSerializer(serializers.ModelSerializer):
@@ -13,6 +20,7 @@ class HSKLevelSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = HSKLevel
-        fields = ('level', 'words')
-
-
+        fields = [
+            'level',
+            'words'
+        ]
