@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a466c5f3-34b2-49b8-ab92-eb6285c1c8af" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/Components/SiteComponents/SiteRender/SiteTransitions.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/Components/SiteComponents/SiteRender/SiteTransitions.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/Data/PageData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/Data/PageData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/Pages/Levels/LevelComponents/LevelTabs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/Pages/Levels/LevelComponents/ReviseButton.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/Pages/Levels/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/Pages/Levels/levels.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/Pages/Revision/RevisionComponents/RevisionButtons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/Pages/Revision/RevisionComponents/RevisionTest.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/Pages/Revision/RevisionComponents/TestWord.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/Pages/Revision/RevisionComponents/WordResult.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/Pages/Revision/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/Pages/Revision/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/Pages/Revision/revision.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
