@@ -7,21 +7,25 @@ import Revision from 'Pages/Revision'
 
 const PageData = [
     {
-        title: "about",
-        page: About
-    },
-    {
         title: "Quiz",
-        page: <Quiz />
+        page: <Quiz />,
+        image: ""
     },
     {
         title: "Words",
-        page:  <Levels />
+        page:  <Levels />,
+        image: ""
     },
     {
         title: "Revision",
-        page: <Revision />
-    }
+        page: <Revision />,
+        image: ""
+    },
+    {
+        title: "about",
+        page: About,
+        image: ""
+    },
 ]
 
 export default PageData

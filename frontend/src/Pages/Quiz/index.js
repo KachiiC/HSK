@@ -1,5 +1,4 @@
-import React, {useState} from 'react'
-
+import React, { useState } from 'react'
 // CSS
 import './revision.css'
 // Components
@@ -12,7 +11,7 @@ import TabData from 'Data/HSKWords/HSKTabData'
 // CSS
 import LevelTabs from 'Pages/Words/LevelComponents/LevelTabs'
 
-const Quiz = (props) => {
+const Quiz = () => {
 
     const [selectedLevel, setSelectedLevel] = useState(0)
     const [wordIndex, setWordIndex] = useState(0)

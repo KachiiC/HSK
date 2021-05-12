@@ -4,9 +4,9 @@ import {Link} from 'react-router-dom'
 
 const HomeCards = (props) =>  (
 
-    <div className="site-span-4 m-auto w-90">
+    <div className="site-span-3 m-auto w-90">
         <Link to={`/${props.title}`}>
-            <h1 className="text-center">{props.title}</h1>
+            <h2>{props.title}</h2>
             <img src={`https://via.placeholder.com/350x350?text=${props.title}`} 
                 alt={props.title}
                 className="site-responsive-image"

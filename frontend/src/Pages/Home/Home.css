@@ -1,0 +1,20 @@
+.home-container {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 30px auto;
+}
+
+@media screen and (max-width: 1080px) {
+    .home-container .site-span-3 {
+        grid-column: span 6;
+        width: 80%;
+        margin: 25px auto !important;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .home-container .site-span-3 {
+        grid-column: span 12;
+        width: 80%;
+    }
+}

@@ -1,13 +1,9 @@
 import React from 'react'
 // COMPONENTS
 import HomeCardsList from './HomeCardsList'
+// CSS
+import './Home.css'
 
-const Home = (
-    <div className="home-container">
-        <div className="site-grid-system">
-            <HomeCardsList />
-        </div>
-    </div>
-)
+const Home = <HomeCardsList />
 
 export default Home

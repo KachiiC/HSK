@@ -17,9 +17,9 @@ const AntdTable = (props) => {
     }
 
     return (
-        <div className="w-100 m-auto">
+        <div className="w-100 m-auto site-overflow">
+            <h1>{props.title}</h1>
             <Table 
-                title={() => <h1>{props.title}</h1>}
                 columns={props.columns} 
                 dataSource={props.data} 
                 pagination={props.pagination}

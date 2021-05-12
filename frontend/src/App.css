@@ -11,6 +11,7 @@
 .site-span-1 {
   grid-column: span 1;
 }
+
 .site-span-2 {
   grid-column: span 2;
 }

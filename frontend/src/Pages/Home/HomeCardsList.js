@@ -1,24 +1,23 @@
 import React from 'react'
-import HomeCards from './HomeCards'
+// COMPONENTS
+import HomeCards from './HomeCard'
+import PageData from 'Data/PageData'
 
 const HomeCardsList = () => {
 
-    const HomeCardsData = [
-        {
-            title: "revision"
-        },
-        {
-            title: "quiz"
-        },
-        {
-            title: "words"
-        }
-    ]
+    const renderCardsList = PageData.map((card, index) => (
+            <HomeCards title={card.title} key={index}/>
+        )
+    )
 
-    const renderCardsList = HomeCardsData.map((card, index) => <HomeCards title={card.title} />)
-
-
-    return renderCardsList
+    return (
+        <div className="home-container">
+            <div className="site-grid-system">
+                {renderCardsList}
+            </div>
+        </div>
+    )
+    
 }
 
 export default HomeCardsList
